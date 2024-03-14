@@ -1,0 +1,166 @@
+#--------------------------------------------------------------------------------#
+#   TERRAFORM PARA CRIAÇÃO DE UMA FUNDAÇÃO DE REDE PARA O PROJETO AWS FIREWALL   #
+#--------------------------------------------------------------------------------#
+
+## Route Table Inspection AZA ##
+resource "aws_route" "rota_default_snet_inspection_tgw_aza" {                     
+  route_table_id         = aws_route_table.rt_inspection_tgw_aza.id  
+  destination_cidr_block = "0.0.0.0/0"                                    
+  network_interface_id = "INSERIR O ENDPOINTO DO FIREWALL ###################### "                        
+  depends_on = "[network_interface_id.INSERIR O ENDPOINTO DO FIREWALL ######################]"
+}
+
+resource "aws_route" "rota_default_snet_inspection_firewall_aza" {                     
+  route_table_id         = aws_route_table.rt_inspection_firewall_aza.id  
+  destination_cidr_block = "0.0.0.0/0"                                    
+  transit_gateway_id = aws_ec2_transit_gateway.tgw_noprod.id
+  depends_on = "[network_interface_id.INSERIR O ENDPOINTO DO FIREWALL ######################]"
+}
+
+## Route Table Inspection AZB ##
+resource "aws_route" "rota_default_snet_inspection_tgw_azb" {                     
+  route_table_id         = aws_route_table.rt_inspection_tgw_azb.id  
+  destination_cidr_block = "0.0.0.0/0"                                    
+  network_interface_id ="INSERIR O ENDPOINTO DO FIREWALL ###################### "                          
+  depends_on = "[network_interface_id.INSERIR O ENDPOINTO DO FIREWALL ######################]"
+}
+
+resource "aws_route" "rota_default_snet_inspection_firewall_azb" {                     
+  route_table_id         = aws_route_table.rt_inspection_firewall_azb.id  
+  destination_cidr_block = "0.0.0.0/0"                                    
+  transit_gateway_id = aws_ec2_transit_gateway.tgw_noprod.id
+  depends_on = aws_ec2_transit_gateway.tgw_noprod.id
+}
+
+## Route Table Outbound AZA ##
+resource "aws_route" "rota_default_snet_outbound_tgw_aza" {                     
+  route_table_id         = aws_route_table.rt_outbound_tgw_aza.id  
+  destination_cidr_block = "0.0.0.0/0"                                    
+  network_interface_id ="INSERIR O ENDPOINTO DO FIREWALL ###################### "                          
+  depends_on = "[network_interface_id.INSERIR O ENDPOINTO DO FIREWALL ######################]"
+}
+
+resource "aws_route" "rota_10_8_snet_outbound_tgw_aza" {                     
+  route_table_id         = aws_route_table.rt_outbound_tgw_aza.id  
+  destination_cidr_block = "10.0.0.0/8"                                    
+  transit_gateway_id = aws_ec2_transit_gateway.tgw_noprod.id
+  depends_on = aws_ec2_transit_gateway.tgw_noprod.id
+}
+
+resource "aws_route" "rota_default_snet_outbound_firewall_aza" {                     
+  route_table_id         = aws_route_table.rt_outbound_firewall_aza.id  
+  destination_cidr_block = "0.0.0.0/0"                                    
+  nat_gateway_id = aws_nat_gateway.natgw_outbound_dev_aza.id
+  depends_on = aws_nat_gateway.natgw_outbound_dev_aza.id
+}
+
+resource "aws_route" "rota_10_8_snet_outbound_firewall_aza" {                     
+  route_table_id         = aws_route_table.rt_outbound_firewall_aza.id  
+  destination_cidr_block = "10.0.0.0/8"                                    
+  transit_gateway_id = aws_ec2_transit_gateway.tgw_noprod.id
+  depends_on = aws_ec2_transit_gateway.tgw_noprod.id
+}
+
+resource "aws_route" "rota_default_snet_outbound_pub_aza" {                     
+  route_table_id         = aws_route_table.rt_outbound_pub_aza.id  
+  destination_cidr_block = "0.0.0.0/0"                                    
+  gateway_id = aws_internet_gateway.igw_vpc_outbound_dev.id
+  depends_on = aws_internet_gateway.igw_vpc_outbound_dev.id
+}
+
+resource "aws_route" "rota_10_8_snet_outbound_pub_aza" {                     
+  route_table_id         = aws_route_table.rt_outbound_pub_aza.id  
+  destination_cidr_block = "10.0.0.0/8"                                    
+  network_interface_id ="INSERIR O ENDPOINTO DO FIREWALL ###################### "                          
+  depends_on = "[network_interface_id.INSERIR O ENDPOINTO DO FIREWALL ######################]"
+}
+
+## Route Table Outbound azb ##
+resource "aws_route" "rota_default_snet_outbound_tgw_azb" {                     
+  route_table_id         = aws_route_table.rt_outbound_tgw_azb.id  
+  destination_cidr_block = "0.0.0.0/0"                                    
+  network_interface_id ="INSERIR O ENDPOINTO DO FIREWALL ###################### "                          
+  depends_on = "[network_interface_id.INSERIR O ENDPOINTO DO FIREWALL ######################]"
+}
+
+resource "aws_route" "rota_10_8_snet_outbound_tgw_azb" {                     
+  route_table_id         = aws_route_table.rt_outbound_tgw_azb.id  
+  destination_cidr_block = "10.0.0.0/8"                                    
+  transit_gateway_id = aws_ec2_transit_gateway.tgw_noprod.id
+  depends_on = aws_ec2_transit_gateway.tgw_noprod.id
+}
+
+resource "aws_route" "rota_default_snet_outbound_firewall_azb" {                     
+  route_table_id         = aws_route_table.rt_outbound_firewall_azb.id  
+  destination_cidr_block = "0.0.0.0/0"                                    
+  nat_gateway_id = aws_nat_gateway.natgw_outbound_dev_azb.id
+  depends_on = aws_nat_gateway.natgw_outbound_dev_azb.id
+}
+
+resource "aws_route" "rota_10_8_snet_outbound_firewall_azb" {                     
+  route_table_id         = aws_route_table.rt_outbound_firewall_azb.id  
+  destination_cidr_block = "10.0.0.0/8"                                    
+  transit_gateway_id = aws_ec2_transit_gateway.tgw_noprod.id
+  depends_on = aws_ec2_transit_gateway.tgw_noprod.id
+}
+
+resource "aws_route" "rota_default_snet_outbound_pub_azb" {                     
+  route_table_id         = aws_route_table.rt_outbound_pub_azb.id  
+  destination_cidr_block = "0.0.0.0/0"                                    
+  gateway_id = aws_internet_gateway.igw_vpc_outbound_dev.id
+  depends_on = aws_internet_gateway.igw_vpc_outbound_dev.id
+}
+
+resource "aws_route" "rota_10_8_snet_outbound_pub_azb" {                     
+  route_table_id         = aws_route_table.rt_outbound_pub_azb.id  
+  destination_cidr_block = "10.0.0.0/8"                                    
+  network_interface_id ="INSERIR O ENDPOINTO DO FIREWALL ###################### "                          
+  depends_on = "[network_interface_id.INSERIR O ENDPOINTO DO FIREWALL ######################]"
+}
+
+/*    ##### Exemplo
+Rotas Subnet - VPC Inspection
+Subnet TGW A
+IP = Local
+0.0.0.0 = Endpoint Firewall
+ 
+Subnet TGW B
+IP = Local
+0.0.0.0 = Endpoint Firewal
+ 
+Subnet FW A
+IP = Local
+0.0.0.0 = TGW
+ 
+Subnet FW B
+IP = Local
+0.0.0.0 = TGW
+
+###########################
+Rotas Subnet - VPC Outbound
+
+Subnet TGW A
+IP (VPC) = Local
+10.0.0.0 = TGW-id
+0.0.0.0 = vpce-id (Endpoint Firewall)
+ 
+Subnet TGW B
+IP (VPC) = Local
+10.0.0.0 = TGW-id
+0.0.0.0 = vpce-id (Endpoint Firewall)
+ 
+Subnet FW A
+IP (VPC) = Local
+10.0.0.0 = TGW-id
+0.0.0.0 = NAT-id
+ 
+Subnet FW B
+IP (VPC) = Local
+10.0.0.0 = TGW-id
+0.0.0.0 = NAT-id
+ 
+Subnet PUB A
+IP (VPC) = Local
+10.0.0.0 = vpce-id (Endpoint Firewall)
+0.0.0.0 = IGW-id
+*/
