@@ -7,7 +7,7 @@ variable "az_b"							    { type = string }
 
 #--------- VPC INSPECTION ---------
 
-variable "tag_name_vpc_inspection"                                             { type = string }
+variable "tag_name_vpc_inspection"                                     { type = string }
 
 variable "cidr_block_vpc_inspection"                                   { type = string }
 
@@ -24,7 +24,7 @@ variable "tag_name_inspection_snet_firewall_aza"				       { type = string }
 
 variable "cidr_block_inspection_snet_tgw_azb"					       { type = string }
 
-variable "tag_name_inspection_snet_tgw_azb"	                           { type = string }
+variable "tag_name_inspection_snet_tgw_azb"	                      { type = string }
 
 variable "cidr_block_inspection_snet_firewall_azb"				       { type = string }
 
