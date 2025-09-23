@@ -142,41 +142,41 @@ tag_name_outbound_snet_pub_azb                           = "snet-us-east-1-outbo
 #--------- ROUTING TABLE VPC OUTBOUND ---------
 
 
-tag_name_rt_outbound_snet_tgw_aza                           = "claroti-rt-us-east-1-outbound-noprod-tgw-aza-01"
+tag_name_rt_outbound_snet_tgw_aza                           = "rt-us-east-1-outbound-noprod-tgw-aza-01"
                            
-tag_name_rt_outbound_snet_firewall_aza                      = "claroti-rt-us-east-1-outbound-noprod-firewall-aza-01"                           
+tag_name_rt_outbound_snet_firewall_aza                      = "rt-us-east-1-outbound-noprod-firewall-aza-01"                           
 
-tag_name_rt_outbound_snet_pub_aza                           = "claroti-rt-us-east-1-outbound-noprod-pub-aza-01"                               
+tag_name_rt_outbound_snet_pub_aza                           = "rt-us-east-1-outbound-noprod-pub-aza-01"                               
 
-tag_name_rt_outbound_snet_tgw_azb   			            = "claroti-rt-us-east-1-outbound-noprod-tgw-azb-01"                              
+tag_name_rt_outbound_snet_tgw_azb   			            = "rt-us-east-1-outbound-noprod-tgw-azb-01"                              
 
-tag_name_rt_outbound_snet_firewall_azb 	                    = "claroti-rt-us-east-1-outbound-noprod-firewall-azb-01" 
+tag_name_rt_outbound_snet_firewall_azb 	                    = "rt-us-east-1-outbound-noprod-firewall-azb-01" 
 			                              
-tag_name_rt_outbound_snet_pub_azb 			                = "claroti-rt-us-east-1-outbound-noprod-pub-azb-01"  
+tag_name_rt_outbound_snet_pub_azb 			                = "rt-us-east-1-outbound-noprod-pub-azb-01"  
 
 #--------- INTERNET GATEWAY VPC OUTBOUND ---------
 
-tag_name_igw_vpc_outbound_noprod                            =  "claroti-igw-vpc-us-east-1-outbound-noprod"
+tag_name_igw_vpc_outbound_noprod                            =  "igw-vpc-us-east-1-outbound-noprod"
 
 #--------- NAT GATEWAY VPC OUTBOUND ---------
 
-tag_name_eip_natgw_outbound_noprod_01                                  = "claroti-eip-natgw-vpc-us-east-1-outbound-noprod-aza"
+tag_name_eip_natgw_outbound_noprod_01                                  = "eip-natgw-vpc-us-east-1-outbound-noprod-aza"
 
-tag_name_eip_natgw_outbound_noprod_02                                  = "claroti-eip-natgw-vpc-us-east-1-outbound-noprod-azb"
+tag_name_eip_natgw_outbound_noprod_02                                  = "eip-natgw-vpc-us-east-1-outbound-noprod-azb"
 
-tag_name_natgw_outbound_noprod_aza                                     = "claroti-natgw-vpc-us-east-1-outbound-noprod-aza"
+tag_name_natgw_outbound_noprod_aza                                     = "natgw-vpc-us-east-1-outbound-noprod-aza"
 
-tag_name_natgw_outbound_noprod_azb                                     = "claroti-natgw-vpc-us-east-1-outbound-noprod-azb"
+tag_name_natgw_outbound_noprod_azb                                     = "natgw-vpc-us-east-1-outbound-noprod-azb"
 
 
 #--------- TGW NOPROD ---------
 
-tag_name_tgw_noprod                                                = "claroti-tgw-us-east-1-noprod"
+tag_name_tgw_noprod                                                = "tgw-us-east-1-noprod"
 
-tag_name_tgw_att_inspection_noprod                                 = "claroti-attach-tgw-vpc-us-east-1-inspection-noprod"
+tag_name_tgw_att_inspection_noprod                                 = "attach-tgw-vpc-us-east-1-inspection-noprod"
 
-tag_name_tgw_att_outbound_noprod                                   = "claroti-attach-tgw-vpc-us-east-1-outbound-noprod"
+tag_name_tgw_att_outbound_noprod                                   = "attach-tgw-vpc-us-east-1-outbound-noprod"
 
-tag_name_tgw_att_inbound_noprod                                    = "claroti-attach-tgw-vpc-us-east-1-inbound-noprod"
+tag_name_tgw_att_inbound_noprod                                    = "attach-tgw-vpc-us-east-1-inbound-noprod"
 
 
