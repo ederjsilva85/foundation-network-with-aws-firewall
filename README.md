@@ -1,4 +1,4 @@
-# Foundation-network-virginia-noprod
+# Foundation-network-with-aws-firewall
 
 This repository contains Terraform code to build a foundational network architecture on AWS, including integration with AWS Network Firewall for traffic inspection and security enforcement in a multi-VPC environment.
 
