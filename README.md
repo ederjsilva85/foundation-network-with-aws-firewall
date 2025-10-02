@@ -95,6 +95,16 @@ Segmented VPCs and subnets for different workloads
 
 Security policies that can be expanded for specific use cases
 
+# 📘 Next Steps
+
+Add Security Groups for application-level protection
+
+Enable CloudWatch Logs and VPC Flow Logs for monitoring
+
+Integrate AWS WAF for HTTP/HTTPS protection
+
+Build CI/CD pipelines for automation
+
 
 
 
